@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 900
+
+Resources:
+  HealthCheckService:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: main.run
+      Runtime: python3.9
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /health-check
+            Method: ANY
+      Environment:
+        Variables:
+          DB_NAME:
+          DB_URI:
+    Metadata:
+      BuildMethod: makefile
