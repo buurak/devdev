@@ -11,7 +11,11 @@ def healt_check(sitemap_url: str) -> list:
         sitemap_url (str): Our base url for sitemap.xml
 
     Returns:
-        list: [{"link": "www.pornhub.com", "status": Fire}, {"link": "www.xxnx.com", "status": Fire}]
+        list: 
+        [
+            {"link": "www.bombabomba.com", "status": 200},
+            {"link": "www.kraloyun.com", "status": 500},
+        ]
     """
     healt_check_dict = {}
     healt_check_list = []
